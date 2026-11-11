@@ -27,6 +27,7 @@ import DocumentTemplatesPage from '@/components/documentTemplates/DocumentTempla
 import PriceListPage from '@/components/priceList/PriceListPage';
 import CloudCashRegistersPage from '@/components/cloudCashRegisters/CloudCashRegistersPage';
 import StatusesPage from '@/components/statuses/StatusesPage';
+import ExecutorsPage from '@/components/executors/ExecutorsPage';
 import DisconnectedPcsPage from '@/components/disconnectedPcs/DisconnectedPcsPage';
 import { CollapsedDock } from '@/components/ui/Modal';
 import type { LucideIcon } from 'lucide-react';
@@ -55,7 +56,8 @@ type SettingsSubtab =
   | 'tradeObjectTypes'
   | 'templates'
   | 'priceList'
-  | 'statuses';
+  | 'statuses'
+  | 'executors';
 
 interface Subtab {
   id: string;
@@ -95,6 +97,7 @@ const SETTINGS_SUBTABS: Subtab[] = [
   { id: 'templates', label: 'Шаблоны документов' },
   { id: 'priceList', label: 'Прейскурант цен' },
   { id: 'statuses', label: 'Статусы' },
+  { id: 'executors', label: 'Исполнители' },
 ];
 
 const CASH_REGISTER_SUBTABS: Subtab[] = [
@@ -220,6 +223,8 @@ function App() {
         return <PriceListPage />;
       case 'statuses':
         return <StatusesPage />;
+      case 'executors':
+        return <ExecutorsPage />;
     }
   };
 

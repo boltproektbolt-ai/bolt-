@@ -256,3 +256,12 @@ export interface Status {
 }
 
 export type StatusInput = Omit<Status, 'id'>;
+
+export interface Executor {
+  id: string;
+  position: string;
+  employee: string;
+  full_name: string;
+}
+
+export type ExecutorInput = Omit<Executor, 'id'>;
